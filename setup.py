@@ -12,7 +12,7 @@ setuptools.setup(
     description="A streamlit component, to make chat ui messages",
     long_description=readme,
     long_description_content_type="text/markdown",
-    url="https://github.com/gamcoh/st-chat",
+    url="https://github.com/gamcoh/st-message",
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[

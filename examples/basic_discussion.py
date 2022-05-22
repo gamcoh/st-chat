@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_chat import message
+from streamlit_message import message
 
 st.set_page_config(
     page_title="Streamlit Basic discussion - Demo",
