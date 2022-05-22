@@ -4,18 +4,18 @@ from typing import Dict, List, Literal, Optional, Union
 import streamlit.components.v1 as components
 
 _RELEASE = True
-COMPONENT_NAME = "streamlit_chat"
+COMPONENT_NAME = "streamlit_message"
 
 if _RELEASE:  # use the build instead of development if release is true
     root_dir = os.path.dirname(os.path.abspath(__file__))
     build_dir = os.path.join(root_dir, "frontend/build")
 
-    _streamlit_chat = components.declare_component(
+    _streamlit_message = components.declare_component(
         COMPONENT_NAME,
         path = build_dir
     )
 else:
-    _streamlit_chat = components.declare_component(
+    _streamlit_message = components.declare_component(
         COMPONENT_NAME,
         url = "http://localhost:3000"
     )
@@ -53,7 +53,7 @@ def message(message: Union[List[str], str],
             answers: Optional[Dict[int, str]] = None,
             key: Optional[str] = None):
     """
-    Creates a new instance of streamlit-chat component
+    Creates a new instance of streamlit-message component
 
     Parameters
     ----------
@@ -68,7 +68,7 @@ def message(message: Union[List[str], str],
     avatar_style: Literal or None
         The style for the avatar of the sender of message, default is bottts
         for not user, and pixel-art-neutral for user.
-        st-chat uses https://avatars.dicebear.com/styles for the avatar
+        st-message uses https://avatars.dicebear.com/styles for the avatar
     seed: int or str
         The seed for choosing the avatar to be used, default is 42.
     answers: dict of int => str
@@ -84,7 +84,7 @@ def message(message: Union[List[str], str],
     if not avatar_style:
         avatar_style = "pixel-art-neutral" if is_user else "bottts"
 
-    _streamlit_chat(message=message, seed=seed, isUser=is_user, isPicture=is_picture, avatarStyle=avatar_style, key=key, answers=answers)
+    _streamlit_message(message=message, seed=seed, isUser=is_user, isPicture=is_picture, avatarStyle=avatar_style, key=key, answers=answers)
 
 
 if not _RELEASE:
