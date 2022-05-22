@@ -5,7 +5,7 @@ with open('README.md') as readme_file:
 
 
 setuptools.setup(
-    name="streamlit-chat",
+    name="streamlit-message",
     version="0.0.1",
     author="Gamliel Cohen <gamcoh>",
     author_email="cohengamliel8@gmail.com",
